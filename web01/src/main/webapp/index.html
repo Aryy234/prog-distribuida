@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programación Distribuida - Apache Tomcat</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        body {
+            background: #0f172a;
+            color: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+            padding: 6px 14px;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #22c55e;
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+        p {
+            color: #94a3b8;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            padding: 16px;
+            text-align: left;
+        }
+        .card h3 {
+            font-size: 0.95rem;
+            color: #38bdf8;
+            margin-bottom: 6px;
+        }
+        .card p {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin: 0;
+        }
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+        .btn-primary {
+            background: #3b82f6;
+            color: #ffffff;
+        }
+        .btn-primary:hover {
+            background: #2563eb;
+        }
+        .btn-secondary {
+            background: #334155;
+            color: #e2e8f0;
+        }
+        .btn-secondary:hover {
+            background: #475569;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="badge">
+        <span class="badge-dot"></span> Servidor en Línea
+    </div>
+
+    <h1>Programación Distribuida</h1>
+    <p>Servidor Apache Tomcat configurado y respondiendo correctamente.</p>
+
+    <div class="cards-grid">
+        <div class="card">
+            <h3>Servidor</h3>
+            <p>Apache TomEE 10.2.0 Web Profile</p>
+        </div>
+        <div class="card">
+            <h3>Entorno</h3>
+            <p>Java OpenJDK 25 / Jakarta EE 10</p>
+        </div>
+    </div>
+
+    <div class="btn-group">
+        <a href="api/hola" class="btn btn-primary" target="_blank">Probar REST (Texto)</a>
+        <a href="api/hola/json?nombre=Estudiante" class="btn btn-secondary" target="_blank">Probar REST (JSON)</a>
+    </div>
+</div>
+</body>
+</html>
