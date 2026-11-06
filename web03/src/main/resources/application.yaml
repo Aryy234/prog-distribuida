@@ -1,10 +1,12 @@
 server:
-    port: 8080
-    host: "0.0.0.0"
+  port: 8080
+  host: "0.0.0.0"
 
-    db:
-        source: jdbc
-        url: "jdbc:postresql://localhost:5432/web03-db"
-        username: "postgres"
-        password: "postgres"
-        poolName: pool-1
+db:
+  source: "jdbc"
+  connection:
+    url: "jdbc:postgresql://localhost:5432/web03-db"
+    username: "postgres"
+    password: "postgres"
+    poolName: "pool-1"
+
