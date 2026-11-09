@@ -9,6 +9,7 @@ import io.helidon.webserver.http.ServerResponse;
 import jakarta.json.bind.Jsonb;
 import jakarta.json.bind.JsonbBuilder;
 
+import java.awt.print.Book;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,8 +23,8 @@ public class Web03Main {
                 .createQuery("SELECT isbn, title FROM books")
                 .execute()
                 .map(row -> new Book(
-                        row.column("isbn").get(String.class),
-                        row.column("title").get(String.class)
+                        //row.column("isbn").get(String.class),
+                        //row.column("title").get(String.class)
                 ))
                 .toList();
 
@@ -39,11 +40,11 @@ public class Web03Main {
         String body = req.content().as(String.class);
         Book book = jsonb.fromJson(body, Book.class);
 
-        dbClient.execute()
-                .insert("INSERT INTO books (isbn, title) VALUES (?, ?)",
-                        book.getIsbn(), book.getTitle());
+        //dbClient.execute()
+                //.insert("INSERT INTO books (isbn, title) VALUES (?, ?)",
+                        //book.getIsbn(), book.getTitle());
 
-        res.status(Status.CREATED_201).send(jsonb.toJson(book));
+        //res.status(Status.CREATED_201).send(jsonb.toJson(book));
     }
 
     public static void createBooksBatch(ServerRequest req, ServerResponse res) {
@@ -52,9 +53,9 @@ public class Web03Main {
         List<Book> books = jsonb.fromJson(body, new ArrayList<Book>(){}.getClass().getGenericSuperclass());
 
         for (Book book : books) {
-            dbClient.execute()
-                    .insert("INSERT INTO books (isbn, title) VALUES (?, ?)",
-                            book.getIsbn(), book.getTitle());
+            //dbClient.execute()
+                    //.insert("INSERT INTO books (isbn, title) VALUES (?, ?)",
+                            //book.getIsbn(), book.getTitle());
         }
 
         res.status(Status.CREATED_201).send(jsonb.toJson(books));
