@@ -1,0 +1,47 @@
+plugins {
+    id("java")
+    id("io.quarkus") version "3.40.1.1"
+    id("io.freefair.lombok") version "9.8.3"
+}
+
+group = "com.programacion.distribuida"
+version = "unspecified"
+
+repositories {
+    mavenCentral()
+}
+
+val quarkusVersion = "3.40.1.1"
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
+}
+
+dependencies {
+    implementation(enforcedPlatform("io.quarkus.platform:quarkus-bom:$quarkusVersion")) //Gestiona todas las versiones
+
+    //CDI
+    //implementar estas dependencias
+    /*
+    orm, panache y postgresql
+     */
+    implementation("io.quarkus:quarkus-arc")
+    implementation("io.quarkus:quarkus-hibernate-orm-panache")
+    implementation("io.quarkus:quarkus-hibernate-orm")
+    implementation("io.quarkus:quarkus-jdbc-postgresql")
+
+
+    //REST
+    implementation("io.quarkus:quarkus-rest")
+    implementation("io.quarkus:quarkus-rest-jsonb")
+
+
+
+
+}
+
+tasks.withType<JavaCompile> {
+    options.encoding = "UTF-8"
+    options.compilerArgs.add("-parameters")
+}
