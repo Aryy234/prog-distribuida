@@ -37,4 +37,10 @@ public class AuthorRest {
                 .map(author -> Response.ok(author).build())
                 .orElse(Response.status(Response.Status.NOT_FOUND).build());
     }
+
+    @GET
+    @Path("/find/{isbn}")
+    public List<Author> findByBook(@PathParam("isbn") String isbn) {
+        return authorRepository.findByBook(isbn);
+    }
 }

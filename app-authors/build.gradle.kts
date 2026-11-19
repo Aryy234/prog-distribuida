@@ -36,6 +36,10 @@ dependencies {
     implementation("io.quarkus:quarkus-rest")
     implementation("io.quarkus:quarkus-rest-jsonb")
 
+    //Control de cambios BD
+    implementation("io.quarkus:quarkus-flyway")
+    implementation("org.flywaydb:flyway-database-postgresql")
+
 
 
 

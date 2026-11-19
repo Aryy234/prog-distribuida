@@ -34,6 +34,7 @@ dependencies {
 
     //REST
     implementation("io.quarkus:quarkus-rest")
+    implementation("io.quarkus:quarkus-rest-jsonb")
 
     //REST Client
     implementation("io.quarkus:quarkus-rest-client")

@@ -10,6 +10,6 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 public class AuthorDto {
-
-
+    private Integer id;
+    private String name;
 }
